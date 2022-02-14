@@ -3,5 +3,6 @@
     --font-family: "Gilroy", sans-serif, serif, arial;
     --form-input-border-radius: 10px;
     --form-input-box-shadow: box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
-    --form-input-placeholder-color: rgba(0,0,0, .5)
+    --form-input-placeholder-color: rgba(0,0,0, .5);
+    --navbar-bg: #041C40;
 }
