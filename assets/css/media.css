@@ -1,0 +1,74 @@
+@media screen and (max-width: 1300px) {
+    .preview .wrapper .img{
+        width: 600px !important;
+        height: 500px
+    }
+}
+@media screen and (max-width: 1030px) {
+    .preview .wrapper {
+        flex-direction: column;
+    }
+    .preview .wrapper .img{
+        height: 300px;
+        margin-bottom: 30px;
+    }
+}
+/* For laptops */
+@media screen and (max-width: 991px) {
+    .container .tabs {
+        flex-wrap: wrap;
+    }
+    .container .tabs > .tab{
+        margin-left: 0 !important;
+    }
+
+    .preview .wrapper .img{
+        width: 100% !important;
+        height: 300px;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 765px) {
+    .preview .wrapper .img {
+        height: 200px !important;
+    }
+    .container .tabs div .tab:not(:first-child){
+        margin-left: 20px !important;
+    }
+    .section-3  .col {
+        flex-direction: column-reverse;
+    }
+    .section-3 #selectLayer  {
+        margin: 0 0 30px 0 !important
+    }
+
+    .section-3 #selectLayer ul {
+        display: flex;
+    }
+    .section-3 #selectLayer li{
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .section-3 #selectLayer li.active{
+        background: rgba(255,255,255,.1);
+    }
+    .section-3 .container  > .title {
+        text-align: center;
+    }
+    .section-3 .container .col {
+        width: 100% !important;
+    }
+    .section-3 #selectLayer li.active::after{
+        display: none;
+    }
+
+    .section-3 #selectLayer .set{
+        margin-bottom: 0 !important;
+    }
+
+}
+@media screen and (max-width: 450px) {
+    .section-3 #selectLayer li{
+        font-size: 14px;
+    }
+}

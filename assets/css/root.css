@@ -1,3 +1,6 @@
+@import url('media.css');
+@import url('http://fonts.cdnfonts.com/css/gilroy-bold');
+
 :root{
     --color-gold: #C5A480;
     --font-family: "Gilroy", sans-serif, serif, arial;
@@ -5,4 +8,5 @@
     --form-input-box-shadow: box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
     --form-input-placeholder-color: rgba(0,0,0, .5);
     --navbar-bg: #041C40;
+    --nav-height: 100px;
 }

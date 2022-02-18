@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-famil)
+    font-family: var(--font-family)
 }
 body, html{
     scroll-behavior: smooth;
@@ -12,7 +12,7 @@ body, html{
 
 header {
     width: 100%;
-    height: 100px;
+    height: var(--nav-height);
     background: var(--navbar-bg);
 }
 header .nav{
@@ -22,8 +22,243 @@ header .nav{
     align-items: center;
     justify-content: center;
 }
-header .container{
+.container{
     width: 85%;
+    position: relative;
+}
+.container::after{
+    content: attr(tt);
+    position: absolute;
+
+}
+header .container{
     display: flex;
-    border: 1px solid red
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar{
+    display: flex;
+}
+a {
+    text-decoration: none;    
+}
+.navbar .item, li{
+    list-style: none;
+}
+.navbar .item:not(:last-child){
+    margin-right: 60px;
+}
+.item a {
+    font-family: var(--font-family);
+    color: #fff;
+}
+.num a {
+    color: var(--color-gold);
+    font-size: 25px;
+    font-weight: 500;
+}
+.brand a {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+.brand a span{
+    color: var(--color-gold)
+}
+main {
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+    background: gray;
+}
+
+main .container{
+    display:flex;
+    margin: 0 auto;
+    height: 100%;
+}
+main wrapper {
+    color: #fff;
+}
+.container > .col {
+    width: 720px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+main wrapper .big {
+    font-size: 70px;
+    margin-bottom: 40px;
+}
+.btn {
+    cursor: pointer;
+    padding: 12px 40px;
+    font-size: 19px;
+    background: var(--color-gold);
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+.btn, .btn span{
+    color: rgba(255,255,255,.8);
+    transition: 200ms;
+    display: inline-block;
+}
+.btn:hover span {
+    color: #fff;
+    transform: translateX(5px);
+}
+.btn span::after {
+    content: "\f054";
+    font-family: "Font awesome 5"
+}
+section {
+    width: 100%;
+}
+section .container {
+    margin: 0 auto;
+}
+.container .title[t]{
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.container .tabs{
+    display: flex;
+    border-bottom: 1px solid #000;
+    margin-bottom: 30px;
+}
+.container .tabs > div:not(.tab) {
+    display:flex;
+}
+.container .tabs .tab{
+    padding: 7px 20px;
+    text-align:left;
+    position:relative;
+    cursor: pointer;
+    margin-bottom: 1px;
+}
+.container .tabs .tab,  
+.container .tabs .tab span {
+    user-select: none !important;
+} 
+.container .tabs .tab:not(:first-child){
+    margin-left: 40px;
+}
+
+.container .tabs .tab.active{
+    color: var(--color-gold);
+}
+.container .tabs .tab.active::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: var(--color-gold);
+    position:absolute;
+    left: 0;
+    top: 100%;
+}
+.container .preview{
+    width: 100%;
+}
+.container .preview .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.preview .img {
+    width: 800px;
+    height: 580px;
+}
+.preview .img img{
+    width: 100%;
+    height: 100%;
+}
+
+.preview .info .title{
+    color: var(--color-gold);
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+.preview .info .item{
+    font-weight: bold;
+    font-size: 20px;
+}
+.preview .info .item span{
+    color: var(--color-gold)
+}
+
+
+.preview .info .item:not(.last){
+    margin-bottom: 30px;
+}
+.preview .info .item.last{
+    margin-bottom: 40px !important;
+}
+.section-3 {
+    height: 800px;
+    width: 100%;
+    background: rgba(130,130,103,.5);
+    display: flex;
+    align-items: center;
+}
+.section-3 .container .col{
+    display: flex;
+}
+
+.section-3 .container  > .title {
+    font-size: 35px;
+    color: var(--color-gold);
+    margin-bottom: 50px;
+}
+.section-3 .container .col  .card{
+    width: 340px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    overflow:hidden;
+}
+.section-3 .container .col  .card > div:not(.img){
+    margin: 20px 15px;
+}
+
+.section-3 .container .col  .card .img {
+    width: 100%;
+    background-image: url('../images/wood.png');
+    height: 200px;
+    background-size: cover;
+}
+
+.section-3 .container .col  .card .title{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.section-3 .container .col  .card .desc{
+    opacity: .7;
+    margin-bottom: 45px;
+}
+
+.section-2 #selectLayer, .section-3 .nav {
+    margin-left: 100px;
+    margin-top: 60px;
+}
+.section-2 #selectLayer, .section-3 .nav li{
+    color: var(--color-gold);
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+.section-2 #selectLayer, .section-3 .nav li:not(:last-child){
+    margin-bottom: 25px;
+}
+
+.section-2 #selectLayer, .section-3 .nav li.active::after{
+    content: '';
+    position: absolute;
+    top: calc(50% - 2px);
+    left: -70px;
+    width: 50px;
+    height: 2px;
+    background: var(--color-gold);
 }
