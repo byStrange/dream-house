@@ -1,12 +1,13 @@
 @import url('media.css');
-@import url('http://fonts.cdnfonts.com/css/gilroy-bold');
+/* @import url('http://fonts.cdnfonts.com/css/gilroy'); */
 
 :root{
     --color-gold: #C5A480;
-    --font-family: "Gilroy", sans-serif, serif, arial;
-    --form-input-border-radius: 10px;
-    --form-input-box-shadow: box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
+    --color-gold-4: rgba(197,164,128, .4);
     --form-input-placeholder-color: rgba(0,0,0, .5);
     --navbar-bg: #041C40;
+    --form-input-border-radius: 10px;
     --nav-height: 100px;
+    --font-family: "Gilroy", sans-serif, serif, arial;
+    --form-input-box-shadow: box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
 }

@@ -23,11 +23,11 @@
                     </a>
                 </div>
                 <ul class="navbar">
-                    <li class="item"><a href="#">Loyihalar</a></li>
-                    <li class="item"><a href="#">Bizning uylar haqida</a></li>
-                    <li class="item"><a href="#">Kompaniya haqida</a></li>
-                    <li class="item"><a href="#">Sharhlar</a></li>
-                    <li class="item"><a href="#">Kontakt</a></li>
+                    <li class="item"><a href="#">Проекты</a></li>
+                    <li class="item"><a href="#">О компании</a></li>
+                    <li class="item"><a href="#">Отзывы</a></li>
+                    <li class="item"><a href="#">О наших домах</a></li>
+                    <li class="item"><a href="#">Контакты</a></li>
                 </ul>
                 <div class="num">
                     <a href="#">+998 00 765 43 21</a>
@@ -40,21 +40,215 @@
             <div class="col">
                 <wrapper>
                     <p class="big">
-                        Biz orzularingizni amalga oshirish uchun shu yerdamiz
+                        Мы здесь, чтобы воплотить вашу мечту
                     </p>
                     <button class="btn">
                         <span>
-                            Narxni hisoblash
+                            Рассчитат стоимость
                         </span>
+                        <span s><i class="fas fa-chevron-right"></i></span>
                     </button>
-                    <div class="scroll-down">
-                        <img src="#" alt="#">
-                        <span>Pastga tushirish</span>
-                    </div>
                 </wrapper>
+            </div>
+            <div class="scroll-down" sn id="scroll">
+                <img src="assets/images/scroll_down.png" width="20" alt="^">
+                <span>Листай вниз</span>
+            </div>
+            <div class="new-post" display="flex">
+                <div class="txt">
+                    <p color="var(--color-gold)" fontSize="20px">Новое видео</p>
+                    <p color="#FFF">Тонкости при выборе технологии строительства</p>
+                </div>
+                <div class="video">
+                    <div class="poster">
+                        <img src="assets/images/poster.png" alt="#">
+                    </div>
+                    <button class="play-btn" background="transparent" border="none" cursor="pointer">
+                        <img  src="assets/images/play-button-svgrepo-com.svg" alt="play" width="40">
+                    </button>
+                </div>
             </div>
         </div>
     </main>
+    <section marginTop="50px">
+        <div class="container">
+            <div class="title" t>
+                <span>
+                    Планировка квартир
+                </span>
+            </div>
+            <div class="tabs">
+                <div>
+                    <div class="tab active"><span>01 | комнатные</span></div>
+                    <div class="tab"><span>02 | комнатные</span></div>
+                </div>
+                <div>
+                    <div class="tab"><span>03 | комнатные</span></div>
+                    <div class="tab"><span>04 | комнатные</span></div>
+                </div>
+                <div class="tab"><span>05 | комнатные</span></div>
+            </div>
+            <div class="preview">
+                <div class="wrapper">
+                    <div class="col">
+                        <div class="img">
+                            <img src="assets/images/painted_room.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="info">
+                            <div class="title">
+                                <span>Квартира 146</span>
+                            </div>
+                            <p class="item">Общая площадь <span>|</span> 79,02 м</p>
+                            <p class="item">Жилая площадь <span>|</span> 34,29 м</p>
+                            <p class="item">Срок сдачи <span>|</span> 3 квартал 2021</p>
+                            <p class="item last">Цена за м <span>|</span> 15 300 грн/м</p>
+                            <div class="btn">
+                                <span>Оставить заявку</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-3">
+        <div class="strange-img">
+            <div class="img">
+                <img src="assets/images/home-2-mask.png" alt="">
+            </div>
+        </div>
+        <div class="container" style="margin: 0 auto">
+            <div class="title">
+                <span>О наших домах</span>
+            </div>
+            <div class="col">
+                <div>
+                    <div class="card">
+                        <div id="data">
+                            <div class="title">
+                                <span>Качественные материалы и возможность их выбора</span>
+                            </div>
+                            <div class="desc">
+                                <span>Vestibulum tincidunt nunc leo malesuada adipiscing ac non egestas nullam. At
+                                    imperdiet
+                                    cras eu nunc adipiscing lacus. Sed enim vel rhoncus nunc tellus. Bibendum integer
+                                    quam
+                                    massa
+                                    duis lorem gravida.</span>
+                            </div>
+                        </div>
+                        <div class="img"></div>
+                    </div>
+                </div>
+                <div class="nav" id="selectLayer">
+                    <ul>
+                        <li class="set active">Материалы</li>
+                        <li class="set ">Условия</li>
+                        <li class="set">Опыт</li>
+                        <li class="set">Под ключ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="form" marginTop="50px">
+        <div class="container">
+            <div class="col">
+                <div class="title">
+                    <span>Получите бесплатную консультацию</span>
+                </div>
+                <form class="form-wrapper">
+                    <div class="yield">
+                        <div class="field">
+                            <input type="text" placeholder="Введите имя">
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Введите Фамилия">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Введите email">
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Введите тему">
+                    </div>
+                    <div class="field">
+                        <textarea rows="6" type="text" placeholder="Введите сообщения"></textarea>
+                    </div>
+                    <div class="button-field">
+                        <button class="btn">
+                            <span>Отправить сообщение</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col mini">
+                <div class="thumbnail">
+                    <div class="play">
+                        <img  src="assets/images/play-button-svgrepo-com.svg" alt="play" width="70">
+                    </div>
+                    <div class="poster"><img src="assets/images/rasm.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="font-size: 30px; color: #fff" class="logo">
+                    DREAM<span style="color: var(--color-gold)">HOUSE</span>
+                </a>
+            </div>
+            <div class="nav">
+                <ul class="navbar" s>
+                    <li class="item">
+                        <a href="#">Проекты</a>
+                    </li>
+                    <li class="item">
+                        <a href="#">О наших домах</a>
+                    </li>
+                    <li class="item">
+                        <a href="#">О компанииОтзывы</a>
+                    </li>
+                    <li class="item">
+                        <a href="#">Отзывы</a>
+                    </li>
+                    <li class="item">
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="num">
+                <span>+998 00 765 43 21</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav">
+                <ul class="navbar">
+                    <li class="item">
+                        <a href="#"><i class="fa-brands fa-vk"></i></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li class="item">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div style="font-size: 14px; color:#fff">
+                <span>Разработка сайта - Shukhrat Aliyev</span>
+            </div>
+            <div style="font-size: 14px; color:#fff">
+                <span>Политика конфидеалности</span>
+            </div>
+        </div>
+    </section>
+    <script src="assets/js/anime.js"></script>
+    <script src="assets/js/strange.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,31 @@
+@media screen and (max-width: 1500px ){
+    .cards .row .col:not(:last-child) {
+        margin-right: 5px !important ;
+    }
+    .row {
+        justify-content: center !important;
+    }
+}
 @media screen and (max-width: 1300px) {
+    .cards .row .col:not(:last-child) {
+        margin-bottom: 20px !important;
+    }
     .preview .wrapper .img{
         width: 600px !important;
         height: 500px
+    }
+    .footer .nav .navbar[s] {
+        flex-direction: column ;
+    }
+    .footer .nav .navbar[s] .item{
+        margin: 0;
+        text-align: center;
+    }
+    .footer .nav .navbar[s] .item:not(:last-child){
+        margin-bottom: 7px;
+    }
+    header .navbar {
+        display: none;
     }
 }
 @media screen and (max-width: 1030px) {
@@ -11,6 +35,9 @@
     .preview .wrapper .img{
         height: 300px;
         margin-bottom: 30px;
+    }
+    .section-3 .strange-img {
+        display: none
     }
 }
 /* For laptops */
@@ -27,13 +54,38 @@
         height: 300px;
         margin-bottom: 30px;
     }
+    .form .container {
+        flex-direction: column;
+    }
+    .form .container .col:not(.mini){
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .form .col.mini .thumbnail{
+        margin-left: 0 !important;
+    }
+        
+
 }
 @media screen and (max-width: 765px) {
+.form .container .form-wrapper > div:not(.field) {
+    justify-content: center;
+}
+    .form .col.mini {
+        /* margin: 0 auto; */
+        width: 400px !important;
+    }
     .preview .wrapper .img {
         height: 200px !important;
     }
     .container .tabs div .tab:not(:first-child){
         margin-left: 20px !important;
+    }
+    .tabs {
+        justify-content: center;
+    }
+    .tabs > div {
+        margin-bottom: 15px;
     }
     .section-3  .col {
         flex-direction: column-reverse;
@@ -65,10 +117,50 @@
     .section-3 #selectLayer .set{
         margin-bottom: 0 !important;
     }
+    .footer .container {
+        flex-direction: column;
+    }
+    .footer .container > div:not(:last-child){
+        margin-bottom: 20px;
+    }
+    .form .container .form-wrapper .yield .field{
+        width: 100%;
+    }
 
+    .form .container .form-wrapper .yield{
+            flex-direction: column;
+    } 
+  
 }
 @media screen and (max-width: 450px) {
+    .form .thumbnail {
+        width: 100% !important;
+    }
+    .form .col.mini {
+        width: 100% !important;
+    }
     .section-3 #selectLayer li{
         font-size: 14px;
     }
+    .footer .container {
+        align-items: flex-start !important;
+    }
+    .footer .nav .navbar[s] .item{
+        text-align: left !important;
+    }
+    .footer .nav .navbar[s] .item:not(:last-child){
+        margin-bottom: 10px;
+    }
+    .tabs .tab {
+        padding-left: 0 !important;
+    }
 }
+@media(max-width:1400px){
+    .card h3{
+        line-height: 10px !important;
+    }
+    .card p{
+        font-size: 15px !important;
+    }
+}
+

@@ -1,5 +1,4 @@
 @import url("./root.css");
-
 *{
     margin: 0;
     padding: 0;
@@ -25,6 +24,7 @@ header .nav{
 .container{
     width: 85%;
     position: relative;
+    max-height: 1000px;
 }
 .container::after{
     content: attr(tt);
@@ -36,6 +36,8 @@ header .container{
     justify-content: space-between;
     align-items: center;
 }
+
+
 .navbar{
     display: flex;
 }
@@ -69,12 +71,15 @@ main {
     width: 100%;
     height: calc(100vh - var(--nav-height));
     background: gray;
+    position: relative;
+    max-height: 1000px;
 }
 
 main .container{
     display:flex;
     margin: 0 auto;
     height: 100%;
+    position: relative;
 }
 main wrapper {
     color: #fff;
@@ -89,6 +94,66 @@ main wrapper .big {
     font-size: 70px;
     margin-bottom: 40px;
 }
+main .scroll-down {
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    opacity: .8;
+    cursor: pointer;
+    align-items: center;
+}
+[sn] {
+    user-select: none;
+}
+main .scroll-down:hover {
+    opacity: 1;
+}
+
+main .new-post {
+    position: absolute;
+    right: 0;
+    bottom: 140px;
+    width: 420px;
+    display: flex;
+    align-items: center;
+}
+main .new-post .poster{
+    width: 100%;
+    height: 150px
+}
+main .new-post .poster img{
+    width: 100%;
+}
+
+.new-post > div {
+    width: 50%;
+    text-align: right;
+}
+main .new-post .video:hover .play-btn{
+    opacity: 1;
+    transform: scale(1)
+}
+
+main .new-post .video{
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .new-post .play-btn{
+    position: absolute;
+    transform: scale(0);
+    transition: 200ms;
+}
+main .scroll-down img{
+    margin-right: 10px;
+}
+main .scroll-down span{
+    color: #fff;
+    font-size: 14px;
+}
+
 .btn {
     cursor: pointer;
     padding: 12px 40px;
@@ -107,10 +172,17 @@ main wrapper .big {
     color: #fff;
     transform: translateX(5px);
 }
-.btn span::after {
-    content: "\f054";
-    font-family: "Font awesome 5"
+.btn span ~ span {
+    opacity: 0;
+    margin-left: 9px
 }
+
+.btn:hover span ~ span {
+    opacity: 1;
+    margin-left: 15px;
+}
+
+
 section {
     width: 100%;
 }
@@ -130,6 +202,67 @@ section .container {
 .container .tabs > div:not(.tab) {
     display:flex;
 }
+.cards .row {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+}
+.cards .row .col {
+    width: 300px;
+}
+.cards .row .col:not(:last-child) {
+    margin-right: 50px;
+}
+.cards .row .col .card{
+    width: 300px;
+    cursor: pointer;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
+
+.col.group .card{
+    background-image: url('../images/6.png'); 
+    background-size:cover;
+}
+.cards .card .content{
+    padding: 0 20px;
+}
+.cards .card div[c] ul { 
+    justify-content: space-between;
+}
+.cards .card div[c] ul li{ 
+    width: 33.33%;
+}
+.cards .card div[c] ul li:not(:last-child) span{
+    border-right: 1px solid var(--color-gold)
+} 
+.card li span {
+    color: var(--color-gold)
+}
+.cards .card div[c] ul li:not(:last-child) span{
+    display: inline-block;
+    width: 85%;
+} 
+.card .name {
+    font-size: 25px;
+    margin: 30px 0;
+}
+.card .price {
+    font-size: 25px;
+    color: var(--color-gold)
+}
+.card {
+    border: 1px solid red;
+}
+.card .img {
+    width: 100%;
+    height: 200px;
+}
+.card .img img{
+    width: 100%;
+}
+
 .container .tabs .tab{
     padding: 7px 20px;
     text-align:left;
@@ -196,11 +329,30 @@ section .container {
     margin-bottom: 40px !important;
 }
 .section-3 {
-    height: 800px;
+    height: 750px;
     width: 100%;
-    background: rgba(130,130,103,.5);
     display: flex;
     align-items: center;
+    margin-top: 100px;
+    background: #151515;
+    position: relative;
+    padding: 0 !important;
+}
+.section-3 .strange-img{
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    top: -70px;
+    overflow: hidden;
+    left: 0;
+}
+.strange-img .img {
+    width: 1000px;
+    position : absolute;
+    right: 0;
+}
+.strange-img img {
+    width: 100%;
 }
 .section-3 .container .col{
     display: flex;
@@ -261,4 +413,165 @@ section .container {
     width: 50px;
     height: 2px;
     background: var(--color-gold);
+}
+.form {
+    display: flex;
+    align-items:center;
+    min-height: 800px;
+}
+.form .container {
+    margin: 0 auto;
+    display: flex;
+    align-items:center;
+}
+.form .container .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+}
+.form .container .col.mini {
+    width: 60%;
+}
+.form .container .col > .title{
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.form .container .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.form .container .form-wrapper > div:not(.field) {
+    display: flex;
+}
+.form .thumbnail .play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 200ms;
+    cursor: pointer;
+}
+.form-wrapper .field input,  .form-wrapper .field textarea {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 100%;
+}
+.form-wrapper > .yield {display: flex; justify-content: space-between;}
+.form-wrapper > .yield .field {
+    width: 47%;
+    margin-bottom: 40px;
+}
+
+.form-wrapper > .field {
+    width: 100%;
+    margin-bottom: 40px;
+}
+.form-wrapper .field textarea  {
+    resize: vertical;
+}
+:is(input, textarea):focus {
+    border: 1px dotted #000 !important
+} 
+
+.form .thumbnail {
+    width: 400px;
+    height: 500px;
+    margin-left: 150px;
+    position: relative;
+}
+.form .thumbnail:hover .play{
+    opacity: 1;
+}
+
+.form .thumbnail .poster {
+    width: 100%;
+    height: 100%;
+}
+.form .thumbnail .poster img{ 
+    width: 100%;
+    height: 100%;
+}
+
+.thumbnail .play-btn{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    background: var(--color-gold-4);
+    cursor: pointer;
+}
+.thumbnail .play-btn::after{
+    content: '';
+    position: absolute;
+    transition: 200ms;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    /* background-image: url('../images/circle.png'); */
+    /* border: 1px solid; */
+    /* background-size: contain; */
+    /* background-position:30px 60px; */
+    /* background-repeat: no-repeat; */
+    /* border-top: 3px solid var(--color-gold); */
+    /* border-left: 3px solid var(--color-gold); */
+    
+}
+.footer a:not(.logo) {
+    opacity: .7;
+    transition: 150ms;
+}
+.footer:hover a{
+    opacity: 1;
+}
+.thumb .play-btn .circle{
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    background: var(--color-gold);
+}
+.footer .container:first-child a:not(.logo):hover {
+    margin-left: 10px;
+}
+.footer .container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}   
+.footer .container:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.footer {
+    padding-top:35px;
+    padding-bottom: 20px;
+    background: var(--navbar-bg)
+}
+.footer .num{
+    font-size: 25px;
+    color: var(--color-gold);
+}
+.footer .container:last-child .nav li {
+    border-radius: 50%;
+    transition: all 150ms;
+}
+.footer .container:last-child .nav li:hover {
+    transform: scale(1.08)
+}
+.container {
+    max-width: 1700px;
 }
