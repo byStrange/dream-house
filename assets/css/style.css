@@ -24,7 +24,6 @@ header .nav{
 .container{
     width: 85%;
     position: relative;
-    max-height: 1000px;
 }
 .container::after{
     content: attr(tt);
@@ -115,6 +114,7 @@ main .new-post {
     bottom: 140px;
     width: 420px;
     display: flex;
+    transition: 250ms;
     align-items: center;
 }
 main .new-post .poster{
@@ -211,22 +211,133 @@ section .container {
     width: 300px;
 }
 .cards .row .col:not(:last-child) {
-    margin-right: 50px;
+    margin-right: 30px;
 }
-.cards .row .col .card{
-    width: 300px;
+.poster.shadow{
+    background-blend-mode: multiply;
+    background-image: url('../images/card_home_no_radius.png') !important;
+    background-size: cover !important; 
+    background:rgba(0,0,0,.5)
+}
+.cards .row .col .card:not(.group){
+    width: 280px;
     cursor: pointer;
     background: #FFFFFF;
     border-radius: 20px;
     padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .col.group .card{
-    background-image: url('../images/6.png'); 
+    background-image: url('../images/6.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px 20px !important; 
     background-size:cover;
+    position: relative;
+    display: flex;
+    cursor: default !important;
+    justify-content: center
 }
+.col.group .card::before{
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 2px;
+    background: var(--color-gold);
+    top: 150px;
+    right: 10px;
+}
+
+.col.group .card::after{
+    content: 'Последних проектов';
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+    width: 50%;
+    font-size: 30px;
+}
+.col.group .card a{
+    position: absolute;
+    bottom: 0px;
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+#about .container[a] .row .col {
+    width: 300px;
+}
+#about .row .col .banner .img{
+    margin-bottom: 20px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+#about .row .col .banner{
+    width: 80%;          
+    position: relative;   
+}
+#about .row .col .banner::after{
+    content: attr(count);
+    border: 1px solid var(--color-gold);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    position: absolute;
+    top: 90px;
+    font-family: poppins,  Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#about .row .col:not(:last-child){
+    margin-bottom: 50px
+}
+#about .container[s] .row{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#about .card .content {
+    padding: 0 10px;
+    margin: 20px 0
+}
+#about .card .content .title{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+#about .card .content .desc{
+    opacity: .7;
+}
+#about .about-icon{
+    position: relative;
+}
+#about .about-icon::after{
+    content: 'О компании';
+    position: absolute;
+    font-size: 60px;
+    color: rgba(0,0,0,.2);
+    top: -35px;
+    left: 0;
+}
+
+#about .container[s] .col .card {
+    width: 270px;
+    background: #fff;
+    border-radius: 20px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+#about .container[s] .col .img {
+    width: 100%;
+}
+#about .container[s] .col img{
+    width: 100%;
+}
+
 .cards .card .content{
     padding: 0 20px;
+    margin: 20px 0 ;
 }
 .cards .card div[c] ul { 
     justify-content: space-between;
@@ -252,15 +363,13 @@ section .container {
     font-size: 25px;
     color: var(--color-gold)
 }
-.card {
-    border: 1px solid red;
-}
 .card .img {
     width: 100%;
     height: 200px;
 }
 .card .img img{
     width: 100%;
+    height: 100%;
 }
 
 .container .tabs .tab{
@@ -338,14 +447,43 @@ section .container {
     position: relative;
     padding: 0 !important;
 }
-.section-3 .strange-img{
+.leaves {
+    position: absolute;
+    right: 0;
+    top: 250px
+}
+.leaves .img{
+    width: 1000px;
+}
+.leaves .img img{
+    width: 100%
+}
+.leaves[s] {
+    left: 0;
+    top: -300px;
+}
+.leaves[s] .img{
+    width: 700px
+}
+
+.strange-img{
     position: absolute;
     width: 100%;
     height: 800px;
     top: -70px;
     overflow: hidden;
     left: 0;
+    user-select: none;
 }
+.strange-img.first{
+    overflow: visible;
+    top: -35px !important;
+}
+.strange-img.first .img{
+    width: 1500px;
+}
+
+
 .strange-img .img {
     width: 1000px;
     position : absolute;
@@ -393,6 +531,7 @@ section .container {
 .section-2 #selectLayer, .section-3 .nav {
     margin-left: 100px;
     margin-top: 60px;
+    z-index: 5;
 }
 .section-2 #selectLayer, .section-3 .nav li{
     color: var(--color-gold);
@@ -418,6 +557,7 @@ section .container {
     display: flex;
     align-items:center;
     min-height: 800px;
+    margin-bottom: 30px;
 }
 .form .container {
     margin: 0 auto;
@@ -450,7 +590,7 @@ section .container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     opacity: 0;
     transition: 200ms;
     cursor: pointer;
@@ -575,3 +715,25 @@ section .container {
 .container {
     max-width: 1700px;
 }
+.back {
+    position: fixed;
+    bottom: 160px;
+    right: 100px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gold);
+    color: #fff;
+    opacity: 0;
+    cursor: pointer;
+}
+.back i{
+    transition: 200ms;
+}
+.back:hover i{
+    margin-bottom: 6px;
+}
+

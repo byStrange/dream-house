@@ -19,7 +19,6 @@ if (window === undefined) {
       console.error(err("$", 2));
     }
   }
-  
   function arrayContains(arr, val) {
     return arr.some(function (a) {
       return a === val;
@@ -605,7 +604,11 @@ if (window === undefined) {
       if (document.querySelectorAll(`[${properties[c]}]`)) {
       var el = document.querySelectorAll(`[${properties[c]}]`);
       for (var all of el) {
-         all.style[properties[c]] = all.getAttribute(properties[c]);
+         try {
+          all.style[properties[c]] = eval(`${all.getAttribute(properties[c])}`);
+         } catch (er) {
+          all.style[properties[c]] = all.getAttribute(properties[c]);
+        }
       }
     }
   }

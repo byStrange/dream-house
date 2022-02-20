@@ -1,15 +1,24 @@
+@media screen and (max-width: 2000px) and (min-width: 1500px) {
+    .cards .row .col .card{
+        width: 320px !important
+    }
+#about .container[s] .col .card {
+    width: 300px !important
+}
+}
 @media screen and (max-width: 1500px ){
     .cards .row .col:not(:last-child) {
-        margin-right: 5px !important ;
+        margin-right: 0px !important ;
     }
-    .row {
-        justify-content: center !important;
+    .strange-img.first .img {
+        width: 1300px !important
     }
 }
 @media screen and (max-width: 1300px) {
-    .cards .row .col:not(:last-child) {
-        margin-bottom: 20px !important;
-    }
+
+    .cards .row {
+        justify-content: center;
+    } 
     .preview .wrapper .img{
         width: 600px !important;
         height: 500px
@@ -24,8 +33,13 @@
     .footer .nav .navbar[s] .item:not(:last-child){
         margin-bottom: 7px;
     }
-    header .navbar {
+    header .navbar,
+    header .num  {
         display: none;
+    }
+
+    #about .container[a] .row {
+        justify-content: center;
     }
 }
 @media screen and (max-width: 1030px) {
@@ -36,7 +50,7 @@
         height: 300px;
         margin-bottom: 30px;
     }
-    .section-3 .strange-img {
+     .strange-img {
         display: none
     }
 }
@@ -64,10 +78,24 @@
     .form .col.mini .thumbnail{
         margin-left: 0 !important;
     }
-        
-
 }
 @media screen and (max-width: 765px) {
+    .back {
+        right: 50px !important
+    }
+    main wrapper .big {
+        font-size:  50px !important;
+    }
+    .new-post{
+        flex-direction: column;
+        bottom: 40px !important;
+        right: 0 !important;
+        align-items: flex-end !important;
+    }
+    .new-post .txt{
+        display: none;
+    }
+
 .form .container .form-wrapper > div:not(.field) {
     justify-content: center;
 }
@@ -113,7 +141,6 @@
     .section-3 #selectLayer li.active::after{
         display: none;
     }
-
     .section-3 #selectLayer .set{
         margin-bottom: 0 !important;
     }
@@ -130,9 +157,39 @@
     .form .container .form-wrapper .yield{
             flex-direction: column;
     } 
-  
+    #about [d] .row {
+        flex-direction: column;
+    }
+    #about [d] .row .wrapper{
+        width: 100% !important;
+        margin-bottom: 50px;
+    }
+    #about [d] .row .col{
+        width: 100% !important;
+    }
+    .poster.shadow{
+        margin: 0 auto
+    }
+    .form {
+        margin-top: 30px;
+    }
+    .leaves {
+        display: none;
+    }
 }
 @media screen and (max-width: 450px) {
+    .new-post{
+        transform:scale(.6) translateX(150px);
+    }
+    .new-post:hover{
+        transform: scale(1) translateX(0);
+    }
+
+
+#about .about-icon::after{
+    font-size: 50px !important;
+    top: -25px !important
+}
     .form .thumbnail {
         width: 100% !important;
     }
@@ -153,6 +210,9 @@
     }
     .tabs .tab {
         padding-left: 0 !important;
+    }
+    #about .video {
+        overflow: hidden
     }
 }
 @media(max-width:1400px){

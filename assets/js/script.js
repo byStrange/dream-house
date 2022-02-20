@@ -166,7 +166,6 @@
       };
     }
   })();
-  
   (function(){
     $scroll.onclick = e => {
         (scroll(0, innerHeight ));
@@ -175,4 +174,26 @@
             opacity: [0, 1]
         })
     }
-  })()
+  })();
+
+(function(){
+  const expectedScroll = 1330
+  window.onscroll = e => {
+    if (document.body.clientHeight - scrollY < expectedScroll){
+      anime({
+        targets: $back,
+        scale: 1,
+        opacity: 1
+      })
+    } else {
+      anime({
+        targets: $back,
+        opacity: 0,
+        scale: 0
+      })
+    }
+  }
+  $back.onclick = e => {
+    scroll(0, 0)
+  }
+})()
