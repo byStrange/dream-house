@@ -686,14 +686,6 @@ section .container {
     width: 80%;
     height: 80%;
     border-radius: 50%;
-    /* background-image: url('../images/circle.png'); */
-    /* border: 1px solid; */
-    /* background-size: contain; */
-    /* background-position:30px 60px; */
-    /* background-repeat: no-repeat; */
-    /* border-top: 3px solid var(--color-gold); */
-    /* border-left: 3px solid var(--color-gold); */
-    
 }
 .footer a:not(.logo) {
     opacity: .7;
