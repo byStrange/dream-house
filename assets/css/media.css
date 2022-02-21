@@ -2,9 +2,9 @@
     .cards .row .col .card{
         width: 320px !important
     }
-#about .container[s] .col .card {
-    width: 300px !important
-}
+    #about .container[s] .col .card {
+        width: 300px !important
+    }
 }
 @media screen and (max-width: 1500px ){
     .cards .row .col:not(:last-child) {
@@ -15,7 +15,7 @@
     }
 }
 @media screen and (max-width: 1300px) {
-
+    
     .cards .row {
         justify-content: center;
     } 
@@ -37,7 +37,9 @@
     header .num  {
         display: none;
     }
-
+    .toggle {
+        display: block !important;
+    }
     #about .container[a] .row {
         justify-content: center;
     }

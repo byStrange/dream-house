@@ -196,4 +196,18 @@
   $back.onclick = e => {
     scroll(0, 0)
   }
-})()
+})();
+
+(function(){
+  $toggler.onclick = e => {
+    $_hamburger.Toggle('show');
+    anime({
+      targets: $_hamburger.children[0].children,
+      translateX: [50, 0],
+      delay: anime.stagger(100),
+      duration: 700,
+      easing: 'easeOutExpo'
+    })
+  }
+  
+})();

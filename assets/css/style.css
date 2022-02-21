@@ -3,7 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-family)
+    font-family: var(--font-family);
+    /* transition: 250ms; */
 }
 body, html{
     scroll-behavior: smooth;
@@ -28,15 +29,43 @@ header .nav{
 .container::after{
     content: attr(tt);
     position: absolute;
-
+    right: -10px;
+    top: 100px;
+    font-size: 14px;
+    transform: rotate(90deg);
 }
 header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.hamburger .nav{
+    padding: 25px;   
+}
+.hamburger .nav .item:not(:last-child) {
+    margin-bottom: 15px;
+}
 
-
+.hamburger .nav .item:hover{
+    margin-left: 10px;
+    transition: 250ms;
+}
+.hamburger {
+    position: absolute;
+    left: 0;
+    top: var(--nav-height);
+    width: 100%;
+    z-index: 444;
+    background: rgba(255,255,255,.2);
+    backdrop-filter :blur( 20px);
+    display: none;
+}
+.hamburger.show {
+    display: block;
+}
+.toggle {
+    display: none;
+}
 .navbar{
     display: flex;
 }
