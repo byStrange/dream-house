@@ -30,7 +30,7 @@ header .nav{
     content: attr(tt);
     position: absolute;
     right: -10px;
-    top: 100px;
+    top: 130px;
     font-size: 14px;
     transform: rotate(90deg);
 }
@@ -72,6 +72,49 @@ header .container{
 a {
     text-decoration: none;    
 }
+header .navbar li {
+    position: relative;
+}
+header .navbar li:hover::after {
+    height: 2px;
+    opacity: 1;
+}
+header .navbar li:hover::before {
+    opacity: 1;
+}
+
+header .navbar li::before {
+    content: '';
+    width:  9px;
+    height: 9px;
+    border: 2px solid var(--color-gold);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: -1px;
+    top: -8px;
+    opacity: 0;
+    transition: 450ms;
+}
+header .navbar li.last::before {
+    left: -2px;
+    width: 8px;
+    height: 8px; 
+}
+
+header .navbar li::after {
+    content: '';
+    width: 100%;
+    height: 0px;
+    transition: 250ms;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    background-color: var(--color-gold);
+    bottom:-5px;
+}
+
 .navbar .item, li{
     list-style: none;
 }
@@ -242,25 +285,38 @@ section .container {
 .cards .row .col:not(:last-child) {
     margin-right: 30px;
 }
+.cards .card:not([d]):hover,  #valunteer .card:hover {
+    transform: translateY(-15px)
+}
 .poster.shadow{
     background-blend-mode: multiply;
     background-image: url('../images/card_home_no_radius.png') !important;
     background-size: cover !important; 
     background:rgba(0,0,0,.5)
 }
-.cards .row .col .card:not(.group){
+.card:not([d]){
+    transition: 250ms;
     width: 280px;
     cursor: pointer;
     background: #FFFFFF;
     border-radius: 20px;
     padding-bottom: 20px;
     margin-bottom: 40px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 }
-
+.splide .card {
+    width: 100%;
+    margin: 5px auto;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.15)
+}
+.splide li:not(:last-child) {
+    margin-right: 20px;
+}
 .col.group .card{
     background-image: url('../images/6.png') !important;
     background-repeat: no-repeat !important;
-    background-position: 0px 20px !important; 
+    background-position: 0px 0px !important; 
     background-size:cover;
     position: relative;
     display: flex;
@@ -294,18 +350,23 @@ section .container {
 #about .container[a] .row .col {
     width: 300px;
 }
-#about .row .col .banner .img{
+.banner .img{
     margin-bottom: 20px;
     height: 120px;
     display: flex;
     justify-content: center;
 }
-
-#about .row .col .banner{
-    width: 80%;          
-    position: relative;   
+.splide__pagination{
+    bottom: auto !important;
 }
-#about .row .col .banner::after{
+.banner{
+    width: 80%;          
+    /* position: relative;    */
+}
+.splide-3 .col {
+    width: 250px
+}
+.banner::after{
     content: attr(count);
     border: 1px solid var(--color-gold);
     border-radius: 50%;
@@ -364,7 +425,7 @@ section .container {
     width: 100%;
 }
 
-.cards .card .content{
+.card .content{
     padding: 0 20px;
     margin: 20px 0 ;
 }
@@ -627,7 +688,7 @@ section .container {
 .form-wrapper .field input,  .form-wrapper .field textarea {
     border: none;
     outline: none;
-    padding: 10px 20px;
+    padding: 15px 20px;
     box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     width: 100%;
@@ -635,18 +696,18 @@ section .container {
 .form-wrapper > .yield {display: flex; justify-content: space-between;}
 .form-wrapper > .yield .field {
     width: 47%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .form-wrapper > .field {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .form-wrapper .field textarea  {
     resize: vertical;
 }
 :is(input, textarea):focus {
-    border: 1px dotted #000 !important
+    border: 1px mixed #000 !important
 } 
 
 .form .thumbnail {

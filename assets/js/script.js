@@ -204,6 +204,7 @@
     anime({
       targets: $_hamburger.children[0].children,
       translateX: [50, 0],
+      opacity: [0, 1],
       delay: anime.stagger(100),
       duration: 700,
       easing: 'easeOutExpo'
@@ -211,3 +212,27 @@
   }
   
 })();
+
+(
+  function() {
+    function check(){
+        document.querySelectorAll('.splide').forEach(splide => {
+          if(window.innerWidth < 500) {
+            splide.css('display', 'block');
+            $ourProjects.css('display', 'none');
+            $banners.css('display', 'none');
+            $valunteer.css('display', 'none');
+          } else {
+            $valunteer.css('display', 'block');
+            splide.css('display', 'none');
+            $ourProjects.css('display', 'block');
+            $banners.css('display', 'block')
+          }
+        })
+    }
+    window.onresize = e => {
+      check()
+    }
+    check()
+  }
+)()

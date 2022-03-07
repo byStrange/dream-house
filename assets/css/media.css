@@ -181,12 +181,17 @@
 }
 @media screen and (max-width: 450px) {
     .new-post{
+        bottom:  0 !important; 
+        right: 0 !important;
         transform:scale(.6) translateX(150px);
+    }   
+    .banner {
+        margin: 0 auto;
     }
-    .new-post:hover{
-        transform: scale(1) translateX(0);
+    .cards .row .col {
+        display: flex;
+        justify-content: center;
     }
-
 
 #about .about-icon::after{
     font-size: 50px !important;
