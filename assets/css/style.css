@@ -317,7 +317,7 @@ section .container {
     background-image: url('../images/6.png') !important;
     background-repeat: no-repeat !important;
     background-position: 0px 0px !important; 
-    background-size:cover;
+    background-size: contain;
     position: relative;
     display: flex;
     cursor: default !important;
