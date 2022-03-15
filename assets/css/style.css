@@ -604,6 +604,10 @@ section .container {
     border-radius: 20px;
     overflow:hidden;
 }
+.section-3 .container .col  .card:not(.active){
+    display: none;
+}
+
 .section-3 .container .col  .card > div:not(.img){
     margin: 20px 15px;
 }
