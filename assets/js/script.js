@@ -1,103 +1,4 @@
-(function () {
-    const tabs = document.querySelectorAll(".tabs .tab");
-    const info = document.querySelector(".info");
-    const data = [
-      {
-        title: "Квартира 146",
-        all: "79.02",
-        some: "34.29",
-        date: "3 квартал 2021",
-        price: " 15 300 грн/м",
-        img: "assets/images/painted_room.png",
-      },
-      {
-        title: "title2",
-        all: "79.02",
-        some: "34.29",
-        date: "3 квартал 2021",
-        price: " 15 300 грн/м",
-        img: "assets/images/painted_room.png",
-      },
-      {
-        title: "title3",
-        all: "79.02 ",
-        some: "34.29 ",
-        date: "3 квартал 2021",
-        price: " 15 300 грн/м",
-        img: "assets/images/painted_room.png",
-      },
-      {
-        title: "title4",
-        all: "79.02 ",
-        some: "34.18 ",
-        date: "3 квартал 2021",
-        price: " 15 300 грн/м",
-        img: "assets/images/painted_room.png",
-      },
-      {
-        title: "title5",
-        all: "79.02",
-        some: "34.29",
-        date: "3 квартал 2021",
-        price: " 15 300 грн/м",
-        img: "assets/images/painted_room.png",
-      },
-    ];
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].onclick = function () {
-        if (!this.className.includes("active")) {
-          let el = this;
-          for (let s = 0; s < tabs.length; s++) {
-            tabs[s].classList.remove("active");
-          }
-          let template = `
-                      <div class="title">
-                          <span>${data[i].title}</span>
-                      </div>
-                      <p class="item">Общая площадь <span>|</span> ${data[i].all}м</p>
-                      <p class="item">Жилая площадь <span>|</span> ${data[i].some}м</p>
-                      <p class="item">Срок сдачи <span>|</span> ${data[i].date}</p>
-                      <p class="item last">Цена за м <span>|</span> ${data[i].price}</p>
-                      <div class="btn">
-                          <span>Оставить заявку</span>
-                      </div>
-                  `;
-          info.innerHTML = template;
-          const easing = "easeOutExpo";
-          const img = document.querySelector(".preview .img");
-          img.querySelector("img").src = data[i].img
-            ? data[i].img
-            : "assets/images/painted_room.png";
-          anime({
-            targets: img,
-            opacity: [0, 1],
-            translateX: [-300, 0],
-            easing: easing,
-          });
-          anime({
-            targets: info.querySelectorAll("p"),
-            opacity: [0, 1],
-            translateX: [-100, 0],
-            easing: easing,
-            delay: anime.stagger(100),
-          });
-          anime({
-            targets: info,
-            translateY: [-200, 0],
-            opacity: [0, 1],
-            easing: easing,
-          });
-          anime({
-            targets: info.querySelector(".title"),
-            opacity: [0, 1],
-            easing: easing,
-            translateX: [200, 0],
-          });
-          el.classList.add("active");
-        }
-      };
-    }
-  })();
+// :(
 
   (function () {
     const data = [
@@ -236,3 +137,50 @@
     check()
   }
 )()
+
+;function openGateFor(someOne, tabTrigger) {
+  console.log(someOne)
+  var target = someOne || !1
+  const easing = "easeOutExpo" || ''
+  if (target || target == false){
+      var el = document.querySelectorAll('#planHouse .preview');
+      console.log(el[0])
+      el.forEach(e => e.classList.remove('active'))
+      document.querySelectorAll(".tabs .tab").forEach(tab => tab.classList.remove('active'))
+      tabTrigger.classList.add('active')
+      if(el.length) {
+          var current = el[someOne];
+          var info = current.querySelector(".info");
+          current.classList.add('active')
+          anime({
+            targets: current.querySelector(".preview .img"),
+            opacity: [0, 1],
+            translateX: [-300, 0],
+            easing: easing,
+          });
+          anime({
+            targets: info.querySelectorAll("p"),
+            opacity: [0, 1],
+            translateX: [-100, 0],
+            easing: easing,
+            delay: anime.stagger(100),
+          });
+          anime({
+            targets: info,
+            translateY: [-200, 0],
+            opacity: [0, 1],
+            easing: easing,
+          });
+          anime({
+            targets: info.querySelector(".title"),
+            opacity: [0, 1],
+            easing: easing,
+            translateX: [200, 0],
+          });
+      }
+  } 
+}
+
+document.querySelectorAll(".tabs .tab").forEach((a, b, c) => {
+  a.onclick = function() {openGateFor(b, this)}
+})

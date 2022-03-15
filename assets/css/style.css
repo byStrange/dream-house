@@ -308,7 +308,7 @@ section .container {
     width: 100%;
     margin: 5px auto;
     box-shadow: none !important;
-    border: 1px solid rgba(0, 0, 0, 0.15)
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 .splide li:not(:last-child) {
     margin-right: 20px;
@@ -492,6 +492,12 @@ section .container {
 .container .preview{
     width: 100%;
 }
+
+.container .preview:not(.active){
+    display: none
+}
+
+
 .container .preview .wrapper {
     display: flex;
     width: 100%;
